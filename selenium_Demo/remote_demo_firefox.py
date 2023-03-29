@@ -12,7 +12,7 @@ driver = webdriver.Remote(
 driver.get("https://zhidao.baidu.com")
 
 print("firefox:", driver.current_url)
-assert driver.current_url, 'https://zhidao.baidu.com'
+
 
 driver.save_screenshot('current_url.png')
 time.sleep(2)

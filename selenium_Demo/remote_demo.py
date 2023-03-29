@@ -1,26 +1,12 @@
-import time
 from selenium import webdriver
+import  time
 
 
-class TestZhiDao:
-    chrome_options = webdriver.ChromeOptions()
-
-
-
-    driver = webdriver.Remote(
-        command_executor='http://192.168.1.8:4444/wd/hub',
-        options=chrome_options
-    )
-
-    driver.get("https://zhidao.baidu.com")
-
-    print("chrome:", driver.current_url)
-    assert driver.current_url, 'https://zhidao.baidu.com'
-
-    time.sleep(2)
-
-    driver.quit()
-
-
-if __name__ == "__name__":
-    TestZhiDao()
+firefox_options = webdriver.FirefoxOptions()
+driver = webdriver.Remote(
+    command_executor='http://192.168.1.8:4444/grid/console',
+    options=firefox_options
+)
+driver.get("http://www.baidu.com")
+time.sleep(3)
+driver.quit()

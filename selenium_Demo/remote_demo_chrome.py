@@ -20,7 +20,7 @@ driver = webdriver.Remote(
 driver.get("https://zhidao.baidu.com")
 
 print("chrome:", driver.current_url)
-assert driver.current_url, 'https://zhidao.baidu.com'
+
 
 driver.save_screenshot('current_url_by_chrome.png')
 time.sleep(2)
