@@ -25,10 +25,11 @@ def run():
     search_btn = driver.find_element(By.XPATH, '//*[@id="search-btn"]')
     search_btn.click()
 
-    # time.sleep(5)
+    time.sleep(5)
     driver.quit()
     print('already quit!')
 
 
 if __name__ == "__main__":
     run()
+

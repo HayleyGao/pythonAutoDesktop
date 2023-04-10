@@ -25,18 +25,22 @@ a_.click()
 chrome_driver.switch_to.parent_frame()  # 从body子框架0切换到子框架1,需要先切换至父框架，再切回到子框架
 chrome_driver.switch_to.frame(1)
 
-# chrome_driver.find_element(By.ID,"alert").click()
-# time.sleep(1)
-# alert_=chrome_driver.switch_to.alert
-# alert_.accept()
+# alert demo
+chrome_driver.find_element(By.ID,"alert").click()
+time.sleep(1)
+alert_=chrome_driver.switch_to.alert
+alert_.accept()
+time.sleep(2)
 
-# chrome_driver.find_element(By.ID,"confirm").click()
-# time.sleep(1)
-# confirm_=chrome_driver.switch_to.alert
-# # confirm_.accept()  # 确认按钮
-# confirm_.dismiss()  # 取消按钮
+# confirm demo
+chrome_driver.find_element(By.ID,"confirm").click()
+time.sleep(1)
+confirm_=chrome_driver.switch_to.alert
+# confirm_.accept()  # 确认按钮
+confirm_.dismiss()  # 取消按钮
+time.sleep(2)
 
-
+# prompt demo
 chrome_driver.find_element(By.ID,"prompt").click()
 time.sleep(1)
 prompt_=chrome_driver.switch_to.alert
