@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dialog</title>
+</head>
+<body>
+<h1>对话框 演示</h1><br>
+
+<input id="alert" value="alert" type="button" onclick="my_alert()">
+<input id="confirm" value="confirm" type="button" onclick="my_confirm()">
+<input id="prompt" value="prompt" type="button" onclick="my_prompt()">
+<p id="demo"></p>
+
+<script>
+    function my_alert(){
+        alert('Hi,你好！')
+        document.getElementById("demo").innerHTML="";
+    }
+
+    function my_confirm(){
+        let text;
+        if(confirm('确定要删除吗？')==true){
+            text="您按了确认"
+        }else{
+            text="您按了取消"
+        }
+        document.getElementById("demo").innerHTML=text;
+    }
+
+    function my_prompt(){
+        var name=prompt('请输入你的名字：','孙大圣');
+        if(name!=null){
+            document.getElementById("demo").innerHTML=name;
+        }else{
+            document.getElementById("demo").innerHTML="您选择了取消按钮";
+        }
+
+    }
+
+
+
+</script>
+</body>
+</html>

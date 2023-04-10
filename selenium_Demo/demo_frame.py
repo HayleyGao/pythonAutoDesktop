@@ -1,27 +1,24 @@
-from  selenium import  webdriver
+from selenium import webdriver
+import time
 from selenium.webdriver.common.by import By
-from  selenium.webdriver.chrome.options import Options
 
+# 不同弹窗的处理办法
+# alert、prompt、confirm
 
-import  time
+chrome_option = webdriver.ChromeOptions()
+chrome_option.add_experimental_option("detach", True)
 
-chrome_option=Options()
-chrome_option.add_experimental_option("detach",True)  # 设置保持chrome浏览器的打开状态
-# https://www.selenium.dev/zh-cn/documentation/webdriver/browsers/chrome/
+chrome_driver = webdriver.Chrome(options=chrome_option)
 
-driver=webdriver.Chrome(options=chrome_option)
-
-driver.get("https://zhidao.baidu.com")
+chrome_driver.get("http://192.168.0.102/index.html")
+chrome_driver.maximize_window()
 
 time.sleep(2)
 
-input_=driver.find_element(By.XPATH,"/html/body/div[2]/header/div/div/div/form/input")
+chrome_driver.switch_to.frame(1)  # 切换到body框架
+chrome_driver.switch_to.frame(0)  # 切换到body的子框架0
 
-input_.send_keys("python开发")
-
-search_btn=driver.find_element(By.XPATH,'//*[@id="search-btn"]')
-search_btn.click()
-
-# time.sleep(5)
-driver.quit()
+a_=chrome_driver.find_element(By.XPATH, "/html/body/div/a[3]")
+print(a_.text)  # 判断，成功找到定位的元素
+a_.click()
 
