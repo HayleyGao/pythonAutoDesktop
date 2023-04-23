@@ -13,5 +13,5 @@ pip3 freeze>requirements.txt
 selenium 模块
 
 frame模块操作需要的mock网页，使用docker部署nginx服务且启动，即可访问nginx部署的静态网页。
-# 部署过程可参考：
-# https://blog.csdn.net/hayleyGao/article/details/130015826
+部署过程可参考：
+https://blog.csdn.net/hayleyGao/article/details/130015826
